@@ -5,6 +5,8 @@ autocmd! bufwritepost .vimrc source %
 autocmd! bufwritepost .bashrc source %
 autocmd! bufwritepost .Xresources !xrdb -merge %
 
+execute pathogen#infect()
+
 set encoding=utf-8                                                              
 set history=1000                                                                
 set number                                                                      

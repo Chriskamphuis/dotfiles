@@ -1,19 +1,31 @@
 shopt -s checkwinsize
+
+export HISTCONTROL=erasedups
+export HISTFILESIZE=NOTHING
+export HISTSIZE=NOTHING
 shopt -s histappend
-
-. /etc/bash_completion
-
+export PROMPT_COMMAND='history -a'
 
 export TERMINAL=urxvt
 export EDITOR=vim
 export TERM=screen
-export BROWSER=iceweasel
+export BROWSER=firefox
+export PAGER=less
 
-# Aliases
-alias sl='ls'
-alias l='ls'
+alias grep='grep --color=auto'
+alias vi=vim
 alias c='clear'
 alias h='history'
+alias l='ls'
+alias tb="nc termbin.com 9999"
+
+set_prompt(){
+	last_c=$?
+	PS1='\u@\h'
+	[[ $last_c -ge 1 ]] && PS1="($last_c) $PS1"
+	PS1="$PS1\w\$ "
+}
+PROMPT_COMMAND='set_prompt'
 
 # Unzip
 function extract() 
