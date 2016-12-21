@@ -1,0 +1,6 @@
+[user]
+	email = mail@chriskamphuis.com
+	name = Chris Kamphuis
+
+[alias]
+	tree = log --decorate --oneline --graph --all
